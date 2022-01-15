@@ -26,6 +26,4 @@ if ( $blog_layout == 'list' ) {
 	$blog_column = '12';
 }
 
-$add_new = "sampad debnath"; 
-
 get_footer();
