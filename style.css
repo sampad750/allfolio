@@ -1,0 +1,18 @@
+/*
+Theme Name: Allfolio
+Theme URI: https://wordpress.creativegigs.net/allfolio/
+Author: Spider Themes
+Author URI: https://themeforest.net/user/creativegigs/portfolio
+Description: Allfolio is a clean, creative, unique WordPress theme that fits for all kinds of car, home, ship Insurance business. Allfolio also very easy to customize and use furthermore. There is no doubt that Allfolio will make your work look more impressive and attractive to viewers. This is highly customizable – looks awesome on tablets and mobile devices.
+
+Version: 0.0.10
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: allfolio
+*/
+
+:root {
+    --brand_color: var(--accent_solid_color_opt, #ff1f1f);
+    --secondary_color: var(--secondary_color_opt, black);
+    --p_color: var(--paragraph_color_opt, black);
+}

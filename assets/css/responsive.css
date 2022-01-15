@@ -1,0 +1,55 @@
+@media (max-width: 1300px) {
+  .banner-area .banner-img .shape:nth-child(1) img {
+    max-width: 330px;
+  }
+  .banner-area .banner-img .shape:nth-child(2) img,
+  .banner-area .banner-img .shape:nth-child(3) img {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .testimonial-area .testimonial-widget {
+    flex-direction: column-reverse;
+  }
+  .testimonial-area .author-img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .right-nav {
+    margin-left: 0;
+  }
+  .banner-area-2 .banner-img {
+    display: none;
+    position: relative;
+  }
+}
+@media (max-width: 767px) {
+  .banner-content h1 {
+    font-size: 55px;
+    line-height: 60px;
+  }
+  .article-area .article-item .art-img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 575px) {
+  .testimonial-slider .next {
+    right: 25px;
+  }
+  .right-nav .theme-btn {
+    display: none;
+  }
+  .right-nav .js-darkmode-btn {
+    margin-right: 0px;
+  }
+  .side_menu .mobile_nav_wrapper .theme-btn {
+    display: block;
+  }
+}
