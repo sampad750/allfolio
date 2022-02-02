@@ -33,13 +33,13 @@ $is_sticky_header_wrapper = $is_sticky_header == '1' ? 'is_sticky' : '';
 
             <div class="mobile_menu_left">
                 <button type="button" class="navbar-toggler mobile_menu_btn">
-                            <span class="menu_toggle ">
-                                <span class="hamburger">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </span>
-                            </span>
+                    <span class="menu_toggle ">
+                        <span class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </span>
                 </button>
             </div>
 

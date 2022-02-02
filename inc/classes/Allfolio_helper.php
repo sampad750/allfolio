@@ -108,29 +108,29 @@ class Allfolio_Helper_Class {
     * @param $handle
     * @param $css_items
     */
-     function meta_css_render( $handle, $css_items ) {
-         $dynamic_css = '';
-         $opt = get_option( 'allfolio_opt' );
+    function meta_css_render( $handle, $css_items ) {
+        $dynamic_css = '';
+        $opt = get_option( 'allfolio_opt' );
 
-         if ( function_exists('get_field') ) {
-             $keys = array_keys($css_items);
-             for ( $i = 0; $i < count($css_items); $i++ ) {
-                 $split_id = explode('__', $keys[$i]);
-                 $meta_id = $split_id[0];
-                 $append = !empty($split_id[1]) ? $split_id[1] : '';
-                 $meta_value = get_field($meta_id);
-                 if ( !empty($meta_value) ) {
-                     $css_i = 1;
-                     foreach ( $css_items[$keys[$i]] as $property => $selector ) {
-                         $css_output = "$selector {";
-                         $css_output .= "$property: $meta_value$append;";
-                         $css_output .= "}";
-                         $dynamic_css .= $css_output;
-                         $css_i++;
-                     }
-                 }
-             }
-         }
+        if ( function_exists('get_field') ) {
+            $keys = array_keys($css_items);
+            for ( $i = 0; $i < count($css_items); $i++ ) {
+                $split_id = explode('__', $keys[$i]);
+                $meta_id = $split_id[0];
+                $append = !empty($split_id[1]) ? $split_id[1] : '';
+                $meta_value = get_field($meta_id);
+                if ( !empty($meta_value) ) {
+                    $css_i = 1;
+                    foreach ( $css_items[$keys[$i]] as $property => $selector ) {
+                        $css_output = "$selector {";
+                        $css_output .= "$property: $meta_value$append;";
+                        $css_output .= "}";
+                        $dynamic_css .= $css_output;
+                        $css_i++;
+                    }
+                }
+            }
+        }
 
         $title_block = function_exists('get_field') ? get_Field('highlight_text_shape') : '';
          if(!empty($title_block['url']) ){
@@ -142,7 +142,7 @@ class Allfolio_Helper_Class {
          }
 
         wp_add_inline_style( $handle, $dynamic_css );
-     }
+    }
 
      /**
      * Pagination
@@ -207,10 +207,10 @@ class Allfolio_Helper_Class {
     /**
      * Post author avatar
      **/
-     function post_author_avatar( $size = 50, $default = '', $alt = '', $args = null ) {
+    function post_author_avatar( $size = 50, $default = '', $alt = '', $args = null ) {
          $post_author_id = get_post_field( 'post_author', get_the_ID() );
          echo get_avatar($post_author_id, $size, $default, $alt, $args);
-     }
+    }
 
     /**
     * Get the first category name

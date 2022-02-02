@@ -14,13 +14,13 @@ Redux::set_section( 'allfolio_opt', array(
 			'id'       => 'header_layout',
 			'type'     => 'image_select',
 			'options'  => array(
-				'default' => array(
+				'default_menu' => array(
 					'alt' => esc_html__( 'Default', 'allfolio' ),
 					'img' => ALLFOLIO_DIR_IMG . '/header-default-layout.png'
 				),
-				'topbar'  => array(
-					'alt' => esc_html__( 'Top Bar', 'allfolio' ),
-					'img' => ALLFOLIO_DIR_IMG . '/header-topbar-layout.png'
+				'sidebar_menu'  => array(
+					'alt' => esc_html__( 'Side Bar Nav Menu', 'allfolio' ),
+					'img' => ALLFOLIO_DIR_IMG . '/sidebar_menu.png'
 				),
 			),
 			'default'  => 'default'

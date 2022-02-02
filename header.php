@@ -11,12 +11,16 @@
 
 // Theme settings options
 $opt = get_option( 'allfolio_opt' );
+$page_header_layout_opt  = ! empty( $opt['header_layout'] ) ? $opt['header_layout'] : 'default_menu';
+$page_header_layout_opts = isset( $page_header_layout ) ? $page_header_layout : $page_header_layout_opt;
+
+
+
 $is_menu_btn     = function_exists( 'get_field' ) ? get_field( 'is_menu_btn' ) : '';
 $is_menu_btn_opt = ! empty( $opt['is_menu_btn'] ) ? $opt['is_menu_btn'] : '';
 $is_menu_btn     = isset( $is_menu_btn ) ? $is_menu_btn : $is_menu_btn_opt;
 $page_header_layout      = function_exists( 'get_field' ) ? get_field( 'header_type' ) : '';
-$page_header_layout_opt  = ! empty( $opt['header_layout'] ) ? $opt['header_layout'] : '';
-$page_header_layout_opts = isset( $page_header_layout ) ? $page_header_layout : $page_header_layout_opt;
+
 $my_theme = wp_get_theme( 'allfolio' );
 $s_value  = get_search_query() ? get_search_query() : '';
 ?>
@@ -62,5 +66,14 @@ if ( $is_preloader == '1' ) {
     <div class="body_wrapper">
         <div class="click_capture"></div>
 
+
+
+
 <?php
-get_template_part( 'template-parts/header-elements/header-default' );
+
+    // header layout
+    if($page_header_layout_opts == 'default_menu'){
+        get_template_part('template-parts/header-elements/header-default');
+    } elseif($page_header_layout_opts == 'sidebar_menu'){
+        //get_template_part('template-parts/header-elements/header-sidebar-menu');
+    }
