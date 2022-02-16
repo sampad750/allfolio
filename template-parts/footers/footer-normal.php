@@ -1,41 +1,41 @@
 <?php
 $opt                     = get_option( 'allfolio_opt' );
-$copyright_text          = ! empty( $opt['copyright_txt'] ) ? $opt['copyright_txt'] : __( '© 2021 Spider-Themes. All rights reserved', 'allfolio' );
-$right_content           = ! empty( $opt['right_content'] ) ? $opt['right_content'] : '';
-$footer_visibility       = function_exists( 'get_field' ) ? get_field( 'footer_visibility' ) : '1';
-$footer_background_color = function_exists( 'get_field' ) ? get_field( 'footer_background_color' ) : '';
-$has_bg                  = ! empty( $footer_background_color ) ? 'has_bg_color ' : '';
-$border_visibility       = function_exists( 'get_field' ) ? get_field( 'footer_border_visibility' ) : 'hr-border pt-110';
-$border_visibility       = empty ( $border_visibility == '0' ) ? 'hr-border pt-110' : '';
-$padding_top             = is_page() ? 'pt-30' : '';
-$footer_visibility       = isset( $footer_visibility ) ? $footer_visibility : '1';
+$copyright_text          = ! empty( $opt['copyright_txt'] ) ? $opt['copyright_txt'] : __( '© 2022 Spider-Themes. All rights reserved', 'allfolio' );
 $is_preset_footer        = isset( $opt['is_footer_columns_preset'] ) ? $opt['is_footer_columns_preset'] : '';
-$is_preset_footer        = ( $is_preset_footer == '1' ) ? ' preset_footer' : '';
+$is_preset_footer        = ( $is_preset_footer == '1' ) ? 'preset_footer' : '';
+$bg_image = !empty($opt['footer_bg']['url']) ? $opt['footer_bg']['url'] : '';
+
 ?>
 
-
-<!-- footer -->
-<footer class="footer-area border-top pb-30 <?php echo esc_attr( $has_bg . $padding_top ) ?>">
-
-	<?php if ( is_active_sidebar( 'footer_widgets' ) ) : ?>
-    <div class="container">
-        <div class="row">
-	        <?php dynamic_sidebar( 'footer_widgets' ) ?>
-            <div class="col-md-4 text-md-center">
-                <div class="copyright-text">
-	                <?php echo wp_kses_post( wpautop( $copyright_text ) ); ?>
+    <!-- footer -->
+    <footer class="footer-area-6">
+        <?php if(!empty($bg_image)){ ?>
+        <div class="bg-img">
+            <img src="<?php echo esc_url( $bg_image )?>">
+        </div>
+        <?php } ?>
+        <div class="container">
+            <?php if ( is_active_sidebar( 'footer_widgets' ) ) : ?>
+                <div class="row footer-top <?php echo esc_attr($is_preset_footer); ?>">
+                    <?php dynamic_sidebar( 'footer_widgets' ) ?>
                 </div>
-            </div>
-            <div class="col-md-4 text-md-end">
-                <div class="social-link">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                    <a href="#"><i class="fab fa-behance"></i></a>
+            <?php endif; ?>
+            <div class="footer-bottom">
+                <?php echo wp_kses_post( $copyright_text ); ?>
+                <div>
+                <?php
+                if( is_array( $opt['footer_btm_links'] ) ){
+                    $footer_btm_links = !empty($opt['footer_btm_links']['redux_repeater_data']) ? $opt['footer_btm_links']['redux_repeater_data'] : '';
+                    $footer_btm_title = !empty($opt['footer_btm_links']['title']) ? $opt['footer_btm_links']['title'] : '';
+                    $footer_btm_url = !empty($opt['footer_btm_links']['url']) ? $opt['footer_btm_links']['url'] : '';
+
+                    for( $i = 0; $i < count( $footer_btm_links ); $i++ ){
+                        echo '<a href="' . esc_url( $footer_btm_url[$i] ) . '"> ' . esc_html( $footer_btm_title[$i] ) . '</a>';
+                    }
+                }
+                ?>
                 </div>
             </div>
         </div>
-    </div>
-	<?php endif; ?>
-</footer>
-<!-- footer end -->
+    </footer>
+    <!-- footer end -->

@@ -83,45 +83,63 @@ Redux::set_section( 'allfolio_opt', array(
 	'icon'       => '',
 	'subsection' => true,
 	'fields'     => array(
+        array(
+            'title'     => esc_html__( 'Background Image', 'docy' ),
+            'id'        => 'footer_bg',
+            'type'      => 'media',
+            'compiler'  => true,
+            'default'   => array(
+                'url'   => 	ALLFOLIO_DIR_IMG.'/footer/footer-bg.png'
+            )
+        ),
 
 		array(
-			'title'  => esc_html__( 'Background Color', 'allfolio' ),
-			'id'     => 'footer_top_bg_color',
-			'type'   => 'color',
-			'output' => array( '.has_bg_color' ),
-			'mode'   => 'background'
-		),
-
-		array(
-			'title'    => esc_html__( 'Bottom Background Color', 'allfolio' ),
-			'subtitle' => esc_html__( 'Footer bottom background color', 'allfolio' ),
+			'title'    => esc_html__( 'Background Color', 'allfolio' ),
 			'id'       => 'footer_btm_bg_color',
 			'type'     => 'color',
-			'output'   => array( '.copy-right-area' ),
+			'output'   => array( '.footer-area-6' ),
 			'mode'     => 'background'
 		),
 	)
 ) );
 
 // Footer settings
-Redux::set_section( 'allfolio_opt', array(
-	'title'      => esc_html__( 'Footer Bottom', 'allfolio' ),
-	'id'         => 'allfolio_footer_btm',
-	'icon'       => '',
-	'subsection' => true,
-	'fields'     => array(
-		array(
-			'title'   => esc_html__( 'Copyright Text', 'allfolio' ),
-			'id'      => 'copyright_txt',
-			'type'    => 'editor',
-			'default' => '© 2021 All Rights Reserved by Spider-Themes',
-			'args'    => array(
-				'wpautop'       => true,
-				'media_buttons' => false,
-				'textarea_rows' => 10,
-				'teeny'         => false,
-				'quicktags'     => false,
+Redux::set_section('allfolio_opt', array(
+    'title'     => esc_html__( 'Footer Bottom', 'allfolio' ),
+    'id'        => 'allfolio_footer_btm',
+    'icon'      => '',
+    'subsection'=> true,
+    'fields'    => array(
+        array(
+            'title'     => esc_html__( 'Copyright Text', 'allfolio' ),
+            'id'        => 'copyright_txt',
+            'type'      => 'editor',
+            'default'   => '© 2022 All Rights Reserved by Spider-Themes',
+            'args'    => array (
+                'wpautop'       => true,
+                'media_buttons' => false,
+                'textarea_rows' => 10,
+                'teeny'         => false,
+                'quicktags'     => false,
+            )
+        ),
+        array(
+            'title'         => esc_html__( 'Links', 'allfolio' ),
+            'id'            => 'footer_btm_links',
+            'type'          => 'repeater',
+			'group_values' => true,
+			'fields'         => array(
+				array(
+					'id'          => 'title',
+					'type'        => 'text',
+					'placeholder' => esc_html__( 'Title', 'allfolio' ),
+				),
+				array(
+					'id'          => 'url',
+					'type'        => 'text',
+					'placeholder' => esc_html__( 'URL', 'allfolio' ),
+				),
 			)
-		)
-	)
-) );
+        )
+    )
+));

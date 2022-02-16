@@ -11,57 +11,55 @@ $is_sticky_header_wrapper = $is_sticky_header == '1' ? 'is_sticky' : '';
 
 ?>
 
-<nav class="navbar menu_one  sticky-nav">
-    <div class="container">
-        <a class="navbar-brand header_logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<?php Allfolio_helper()->logo(); ?>
-        </a>
-
-        <div class="right-nav">
-            <div class=" js-darkmode-btn" title="Toggle dark mode">
-                <label for="something" class="tab-btn day">
-                    <ion-icon name="sunny"></ion-icon>
-                </label>
-                <label for="something" class="tab-btn night">
-                    <ion-icon name="moon"></ion-icon>
-                </label>
-                <label class=" ball" for="something"></label>
-                <input type="checkbox" name="something" id="something" class="dark_mode_switcher">
-            </div>
-
-			<?php get_template_part( 'template-parts/header-elements/action-button' ); ?>
-
-            <div class="mobile_menu_left">
-                <button type="button" class="navbar-toggler mobile_menu_btn">
-                    <span class="menu_toggle ">
-                        <span class="hamburger">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </span>
-                </button>
-            </div>
-
-
-        </div>
-    </div>
-</nav>
-<div class="side_menu scroll">
-    <div class="mobile_menu_header">
-        <div class="close_nav">
-            <i class="icon_close"></i>
-        </div>
-        <div class="mobile_logo">
-            <a class="navbar-brand header_logo me-0" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<?php Allfolio_helper()->logo(); ?>
+    <!-- Navbar -->
+    <nav class="navbar menu_one sticky-nav ">
+        <div class="container">
+            <a class="navbar-brand header_logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <?php Allfolio_helper()->logo(); ?>
             </a>
-        </div>
-    </div>
-    <div class="mobile_nav_wrapper ">
-        <nav class="mobile_nav_top " id="main_nav_spy">
 
-			<?php
+            <div class="right-nav">
+                <div class=" js-darkmode-btn" title="Toggle dark mode">
+                    <label for="something" class="tab-btn day">
+                        <ion-icon name="sunny"></ion-icon>
+                    </label>
+                    <label for="something" class="tab-btn night">
+                        <ion-icon name="moon"></ion-icon>
+                    </label>
+                    <label class=" ball" for="something"></label>
+                    <input type="checkbox" name="something" id="something" class="dark_mode_switcher">
+                </div>
+
+                <?php get_template_part( 'template-parts/header-elements/action-button' ); ?>
+
+                <div class="mobile_menu_left">
+                    <button type="button" class="navbar-toggler mobile_menu_btn">
+                        <span class="menu_toggle ">
+                            <span class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="side_menu scroll">
+        <div class="mobile_menu_header">
+            <div class="close_nav">
+                <i class="icon_close"></i>
+            </div>
+            <div class="mobile_logo">
+                <a class="navbar-brand header_logo me-0" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <?php Allfolio_helper()->logo(); ?>
+                </a>
+            </div>
+        </div>
+        <div class="mobile_nav_wrapper ">
+            <nav class="mobile_nav_top " id="main_nav_spy">
+            <?php
 			if ( has_nav_menu( 'main_menu' ) ) {
 				wp_nav_menu( array(
 					'menu'           => '',
@@ -73,10 +71,34 @@ $is_sticky_header_wrapper = $is_sticky_header == '1' ? 'is_sticky' : '';
 				) );
 			}
 			?>
-
-			<?php get_template_part( 'template-parts/header-elements/action-button' ); ?>
-
-        </nav>
+            </nav>
+        </div>
     </div>
-</div>
-<!-- Navbar end-->
+    <!-- Navbar end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

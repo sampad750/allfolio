@@ -49,6 +49,8 @@ function allfolio_scripts() {
     wp_enqueue_style( 'allfolio-default', ALLFOLIO_DIR_CSS . '/default.css' );
     wp_enqueue_style( 'allfolio-style', ALLFOLIO_DIR_CSS . '/style.css' );
 	wp_enqueue_style( 'allfolio-main', ALLFOLIO_DIR_CSS . '/main.css' );
+
+
 	wp_enqueue_style( 'allfolio-responsive', ALLFOLIO_DIR_CSS . '/responsive.css' );
 	wp_enqueue_style( 'allfolio-wpd', ALLFOLIO_DIR_CSS . '/wpd-style.css' );
 	wp_enqueue_style( 'allfolio-root', get_stylesheet_uri() );
@@ -81,7 +83,10 @@ function allfolio_scripts() {
 	wp_enqueue_script( 'wow', ALLFOLIO_DIR_JS . '/wow.min.js', array( 'jquery' ), true, true );
 	wp_enqueue_script( 'mCustomScrollbar', ALLFOLIO_DIR_JS . '/jquery.mCustomScrollbar.concat.min.js', array( 'jquery' ), true, true );
 
+
     wp_enqueue_script( 'allfolio-script', ALLFOLIO_DIR_JS . '/script.js', array( 'jquery' ), '1.0.0', true );
+
+
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

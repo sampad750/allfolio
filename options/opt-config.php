@@ -123,7 +123,7 @@ $args = array(
 
 
 // Add content after the form.
-$args['footer_text'] = '<br>' . esc_html__( 'Copyright Allfolio &copy; 2021', 'allfolio' );
+$args['footer_text'] = '<br>' . esc_html__( 'Copyright Allfolio &copy; 2022', 'allfolio' );
 
 Redux::set_args( $opt_name, $args );
 
@@ -138,16 +138,20 @@ Redux::set_args( $opt_name, $args );
  *
  */
 require get_template_directory() . '/options/opt_general.php';
-require get_template_directory() . '/options/opt_color.php';
 require get_template_directory() . '/options/opt_header.php';
 require get_template_directory() . '/options/opt_footer.php';
-require get_template_directory() . '/options/opt_menu.php';
-require get_template_directory() . '/options/opt_blog.php';
-require get_template_directory() . '/options/opt_custom_code.php';
-require get_template_directory() . '/options/opt_social_links.php';
-require get_template_directory() . '/options/opt_404.php';
-require get_template_directory() . '/options/opt_faq.php';
-require get_template_directory() . '/options/opt_case_study.php';
+
+
+
+//require get_template_directory() . '/options/opt_color.php';
+
+// require get_template_directory() . '/options/opt_menu.php';
+// require get_template_directory() . '/options/opt_blog.php';
+// require get_template_directory() . '/options/opt_custom_code.php';
+// require get_template_directory() . '/options/opt_social_links.php';
+// require get_template_directory() . '/options/opt_404.php';
+// require get_template_directory() . '/options/opt_faq.php';
+// require get_template_directory() . '/options/opt_case_study.php';
 /*
  * <--- END SECTIONS
  */

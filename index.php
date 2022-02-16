@@ -13,6 +13,7 @@
  */
 
 get_header();
+
 $opt             = get_option( 'allfolio_opt' );
 $blog_column     = is_active_sidebar( 'sidebar_widgets' ) ? '8' : '12';
 $blog_layout_opt = ! empty( $opt['blog_layout'] ) ? $opt['blog_layout'] : 'list';

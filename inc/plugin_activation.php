@@ -71,12 +71,6 @@ function allfolio_register_required_plugins() {
 		),
 
         array(
-            'name'          => esc_html__( 'Contact Form 7', 'allfolio' ),
-            'slug'          => 'contact-form-7',
-            'required'      => false,
-        ),
-
-        array(
             'name'          => esc_html__( 'One Click Demo Import', 'allfolio' ),
             'slug'          => 'one-click-demo-import',
             'required'      => false,

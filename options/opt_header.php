@@ -20,7 +20,7 @@ Redux::set_section( 'allfolio_opt', array(
 				),
 				'sidebar_menu'  => array(
 					'alt' => esc_html__( 'Side Bar Nav Menu', 'allfolio' ),
-					'img' => ALLFOLIO_DIR_IMG . '/sidebar_menu.png'
+					'img' => ALLFOLIO_DIR_IMG . '/header-default-layout.png'
 				),
 			),
 			'default'  => 'default'
