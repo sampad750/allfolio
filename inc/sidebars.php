@@ -20,8 +20,8 @@ add_action( 'widgets_init', function () {
 		'before_widget' => '<div id="%1$s" class="col-xl-' . $footer_column . ' col-lg-4 col-md-6 footer__widget_wrap wow fadeInUp2">
                             <div class="footer__widget text-center text-md-left %2$s">',
 		'after_widget'  => '</div></div>',
-		'before_title'  => '<h4 class="widget-heading mb-50 footer-widget-heading">',
-		'after_title'   => '</h4>'
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>'
 	) );
 
 
