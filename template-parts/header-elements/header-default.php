@@ -19,16 +19,17 @@ $is_sticky_header_wrapper = $is_sticky_header == '1' ? 'is_sticky' : '';
             </a>
 
             <div class="right-nav">
-                <div class=" js-darkmode-btn" title="Toggle dark mode">
-                    <label for="something" class="tab-btn day">
-                        <ion-icon name="sunny"></ion-icon>
-                    </label>
-                    <label for="something" class="tab-btn night">
-                        <ion-icon name="moon"></ion-icon>
-                    </label>
-                    <label class=" ball" for="something"></label>
-                    <input type="checkbox" name="something" id="something" class="dark_mode_switcher">
-                </div>
+
+                    <div class=" js-darkmode-btn" title="Toggle dark mode">
+                        <label for="something" class="tab-btn day">
+                            <ion-icon name="sunny"></ion-icon>
+                        </label>
+                        <label for="something" class="tab-btn night">
+                            <ion-icon name="moon"></ion-icon>
+                        </label>
+                        <label class=" ball" for="something"></label>
+                        <input type="checkbox" name="something" id="something" class="dark_mode_switcher">
+                    </div>
 
                 <?php get_template_part( 'template-parts/header-elements/action-button' ); ?>
 

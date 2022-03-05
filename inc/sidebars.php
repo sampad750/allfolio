@@ -17,9 +17,8 @@ add_action( 'widgets_init', function () {
 		'name'          => esc_html__( 'Footer Widgets', 'allfolio' ),
 		'description'   => esc_html__( 'Add widgets here for Footer widgets area', 'allfolio' ),
 		'id'            => 'footer_widgets',
-		'before_widget' => '<div id="%1$s" class="col-xl-' . $footer_column . ' col-lg-4 col-md-6 footer__widget_wrap wow fadeInUp2">
-                            <div class="footer__widget text-center text-md-left %2$s">',
-		'after_widget'  => '</div></div>',
+		'before_widget' => '<div id="%1$s" class="col-xl-' . $footer_column . ' col-lg-4 col-md-6 footer__widget_wrap">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h5>',
 		'after_title'   => '</h5>'
 	) );

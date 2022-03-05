@@ -43,6 +43,7 @@ function allfolio_scripts() {
 	//wp_enqueue_style( 'allfolio-google-fonts', allfolio_fonts_url(), array(), null );
 	wp_enqueue_style( 'bootstrap', ALLFOLIO_DIR_CSS . '/bootstrap.min.css' );
 	wp_enqueue_style( 'elegant', ALLFOLIO_DIR_CSS . '/elegant-icons.min.css' );
+	wp_enqueue_style( 'elegant', ALLFOLIO_DIR_CSS . '/elegant-icons.min.css' );
     wp_enqueue_style( 'allfolio-all', ALLFOLIO_DIR_CSS . '/all.min.css' );
     wp_enqueue_style( 'mCustomScrollbar', ALLFOLIO_DIR_CSS . '/jquery.mCustomScrollbar.min.css' );
     wp_register_style( 'animate', ALLFOLIO_DIR_CSS . '/animate.css' );
@@ -83,6 +84,8 @@ function allfolio_scripts() {
 	wp_enqueue_script( 'wow', ALLFOLIO_DIR_JS . '/wow.min.js', array( 'jquery' ), true, true );
 	wp_enqueue_script( 'mCustomScrollbar', ALLFOLIO_DIR_JS . '/jquery.mCustomScrollbar.concat.min.js', array( 'jquery' ), true, true );
 
+
+	wp_enqueue_script( 'ionicons', 'https://unpkg.com/ionicons@5.4.0/dist/ionicons.js', array( 'jquery' ), true, true );
 
     wp_enqueue_script( 'allfolio-script', ALLFOLIO_DIR_JS . '/script.js', array( 'jquery' ), '1.0.0', true );
 

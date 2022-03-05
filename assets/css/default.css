@@ -602,6 +602,7 @@
   padding-top: 200px;
 }
 
+
 .pb-10 {
   padding-bottom: 10px;
 }
@@ -627,7 +628,7 @@
   padding-bottom: 45px;
 }
 .pb-50 {
-  padding-bottom: 50px;
+  padding-bottom: 50px !important;
 }
 .pb-55 {
   padding-bottom: 55px;
@@ -718,6 +719,10 @@
 }
 .pb-200 {
   padding-bottom: 200px;
+}
+
+.pb-350 {
+  padding-bottom: 350px;
 }
 
 .pl-10 {
