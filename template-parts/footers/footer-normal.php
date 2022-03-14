@@ -17,7 +17,7 @@ $pt_spacer                  = !empty( $bg_image && $shape_visibility == 1 ) ? 'f
 <!-- footer -->
 <footer class="footer-area-6">
 
-    <?php if (!empty($bg_image) && $shape_visibility == 1) { ?>
+    <?php if ( !empty($bg_image) && $shape_visibility == 1 ) { ?>
         <div class="bg-img">
             <img src="<?php echo esc_url($bg_image) ?>">
         </div>
