@@ -18,6 +18,7 @@ $opt = get_option('allfolio_opt');
  * Page Options
  */
 $footer_visibility = function_exists('get_field') ? get_field('footer_visibility') : '1';
+//var_dump( $footer_visibility );
 if (!isset($footer_visibility)) {
 	$footer_visibility = '1';
 }

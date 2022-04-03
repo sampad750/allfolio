@@ -38,3 +38,26 @@ function allfolio_get_html_tag( $tag = 'blockquote', $content = '' ) {
 		++$i;
 	}
 }
+
+/**
+ * Saving automatically the ACF group fields json files
+ */
+add_filter('acf/settings/save_json', function ($path) {
+	// update path
+	$path = get_stylesheet_directory() . '/inc/acf-json';
+	// return
+	return $path;
+});
+/**
+ * Loading the saved ACF fields
+ */
+add_filter('acf/settings/load_json', function ($paths) {
+	// append path
+	$paths[] = get_template_directory() . '/inc/acf-json';
+
+	if (is_child_theme()) {
+		$paths[] = get_stylesheet_directory() . '/inc/acf-json';
+	}
+	// return
+	return $paths;
+});
