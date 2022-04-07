@@ -87,6 +87,17 @@ Redux::set_section( 'allfolio_opt', array(
 		),
 
 		array(
+			'title'    => esc_html__( 'Side Menu Logo', 'allfolio' ),
+			'subtitle' => esc_html__( 'Upload here the side menu logo.', 'allfolio' ),
+			'id'       => 'side_menu_logo',
+			'type'     => 'media',
+			'compiler' => true,
+			'default'  => array(
+				'url' => ALLFOLIO_DIR_IMG . '/logo.png'
+			)
+		),
+
+		array(
 			'title'    => esc_html__( 'Logo dimensions', 'allfolio' ),
 			'subtitle' => esc_html__( 'Set a custom height width for your upload logo.', 'allfolio' ),
 			'id'       => 'logo_dimensions',

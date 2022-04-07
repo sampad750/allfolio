@@ -379,11 +379,11 @@
     });
   }
 
-  //mixit up
-  if ($("#team-filter").length) {
-    var containerEl = document.querySelector("#team-filter");
-    var mixer = mixitup(containerEl);
-  }
+  // //mixit up
+  // if ($("#team-filter").length) {
+  //   var containerEl = document.querySelector("#team-filter");
+  //   var mixer = mixitup(containerEl);
+  // }
 
   new WOW().init();
 

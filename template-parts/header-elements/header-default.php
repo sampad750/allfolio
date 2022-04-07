@@ -54,7 +54,7 @@ $is_sticky_header_wrapper = $is_sticky_header == '1' ? 'is_sticky' : '';
             </div>
             <div class="mobile_logo">
                 <a class="navbar-brand header_logo me-0" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                    <?php Allfolio_helper()->logo(); ?>
+                    <?php Allfolio_helper()->side_menu_logo(); ?>
                 </a>
             </div>
         </div>

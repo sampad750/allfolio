@@ -4,7 +4,7 @@ $copyright_text             = !empty($opt['copyright_txt']) ? $opt['copyright_tx
 $is_preset_footer           = isset($opt['is_footer_columns_preset']) ? $opt['is_footer_columns_preset'] : '';
 $is_preset_footer           = ($is_preset_footer == '1') ? 'preset_footer' : '';
 
-$footer_bg_meta             = function_exists('get_field') ? get_field('footer_bg_image') : '';
+$footer_bg_meta             = function_exists('get_field') ? get_field('footer_background') : '';
 $footer_bg_opt              = !empty($opt['footer_bg']['url']) ? $opt['footer_bg']['url'] : '';
 
 $bg_image                   = !empty($footer_bg_meta) ? $footer_bg_meta : $footer_bg_opt;

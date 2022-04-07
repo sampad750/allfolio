@@ -39,6 +39,8 @@ function allfolio_get_html_tag( $tag = 'blockquote', $content = '' ) {
 	}
 }
 
+
+
 /**
  * Saving automatically the ACF group fields json files
  */

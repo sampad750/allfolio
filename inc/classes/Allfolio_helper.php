@@ -27,57 +27,84 @@ class Allfolio_Helper_Class
     }
 
     /**
-     * Website Logo
+     * Main menu Logo
      */
     public function logo()
     {
         $opt = get_option('allfolio_opt');
 
         // Main Logo
-        $logo_one = isset($opt['main_logo']['url']) ? $opt['main_logo']['url'] : '';
-        $logo_two = !empty($opt['sticky_logo']['url']) ? $opt['sticky_logo']['url'] : '';
+        $main_logo = isset($opt['main_logo']['url']) ? $opt['main_logo']['url'] : '';
+        $sticky_logo = !empty($opt['sticky_logo']['url']) ? $opt['sticky_logo']['url'] : '';
+        $side_menu_logo = !empty($opt['side_menu_logo']['url']) ? $opt['side_menu_logo']['url'] : '';
 
-        if (!empty($logo_one || $logo_two)) {
+        if (!empty($main_logo || $sticky_logo)) {
         ?>
-            <img class="first_logo sticky_logo mCS_img_loaded" src="<?php echo esc_url($logo_one) ?>" alt="<?php bloginfo('name'); ?>">
-            <img class="white_logo main_logo" src="<?php echo esc_url($logo_two) ?>" alt="<?php bloginfo('name'); ?>">
+            <img class="first_logo sticky_logo mCS_img_loaded" src="<?php echo esc_url($main_logo) ?>" alt="<?php bloginfo('name'); ?>">
+            <img class="white_logo main_logo" src="<?php echo esc_url($sticky_logo) ?>" alt="<?php bloginfo('name'); ?>">
 
         <?php
-        } else {
+        }elseif(!empty($side_menu_logo)){ ?>
+            <img class="sticky_logo main_logo mCS_img_loaded" src="<?php echo esc_url($side_menu_logo) ?>" srcset="img/logo-2x.png 2x" alt="<?php bloginfo('name'); ?>">
+            <img class="white_logo mCS_img_loaded" src="img/logo-w.png" srcset="img/logo-w2x.png 2x" alt="logo">
+        <?php } else {
             echo "<h3>" . bloginfo('name') . "</h3>";
         }
         echo '</a>';
     }
 
-    // Banner Title
-    function banner_title()
+    /**
+     * Side menu logo
+     */
+    public function side_menu_logo()
     {
         $opt = get_option('allfolio_opt');
-        if (is_home()) {
-            $blog_title = !empty($opt['blog_title']) ? $opt['blog_title'] : get_bloginfo('name');
-            echo wp_kses_post($blog_title);
-        } elseif (is_page()) {
-            the_title();
-        } elseif (is_category()) {
-            single_cat_title();
-        } elseif (is_archive()) {
-            the_archive_title();
-        } elseif (is_search()) {
-            esc_html_e('Search result for: "', 'allfolio');
-            echo get_search_query() . '"';
-        } elseif (is_singular('faq')) {
-            $faq_page_title = !empty($opt['faq_page_title']) ? $opt['faq_page_title'] : '';
-            echo wp_kses_post($faq_page_title);
-        } elseif (is_singular('case-study')) {
-            the_title();
+
+        $side_menu_logo = !empty($opt['side_menu_logo']['url']) ? $opt['side_menu_logo']['url'] : '';
+
+        if (!empty($side_menu_logo)) {
+        ?>
+            <img class="sticky_logo main_logo mCS_img_loaded" src="<?php echo esc_url($side_menu_logo) ?>" alt="<?php bloginfo('name'); ?>">
+            <img class="white_logo mCS_img_loaded" src="<?php echo esc_url($side_menu_logo) ?>" alt="<?php bloginfo('name'); ?>">
+        <?php
         }
+        else {
+            echo "<h3>" . bloginfo('name') . "</h3>";
+        }
+        echo '</a>';
     }
+
+    // // Banner Title
+    // function banner_title()
+    // {
+    //     $opt = get_option('allfolio_opt');
+    //     if (is_home()) {
+    //         $blog_title = !empty($opt['blog_title']) ? $opt['blog_title'] : get_bloginfo('name');
+    //         echo wp_kses_post($blog_title);
+    //     } elseif (is_page()) {
+    //         the_title();
+    //     } elseif (is_category()) {
+    //         single_cat_title();
+    //     } elseif (is_archive()) {
+    //         the_archive_title();
+    //     } elseif (is_search()) {
+    //         esc_html_e('Search result for: "', 'allfolio');
+    //         echo get_search_query() . '"';
+    //     } elseif (is_singular('faq')) {
+    //         $faq_page_title = !empty($opt['faq_page_title']) ? $opt['faq_page_title'] : '';
+    //         echo wp_kses_post($faq_page_title);
+    //     } elseif (is_singular('case-study')) {
+    //         the_title();
+    //     }
+    // }
+
+
+
 
     /**
      * Social Links
      **/
-    function social_links()
-    {
+    function social_links(){
         $opt = get_option('allfolio_opt');
         ?>
         <?php if (!empty($opt['facebook'])) { ?>
@@ -106,7 +133,7 @@ class Allfolio_Helper_Class
 
         <?php if (!empty($opt['dribbble'])) { ?>
             <a href="<?php echo esc_url($opt['dribbble']); ?>"><i class="fab fa-dribbble"></i></a>
-<?php }
+        <?php }
     }
 
 

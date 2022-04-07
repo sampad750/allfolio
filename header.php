@@ -47,9 +47,7 @@ if ( $is_preloader == '1' ) {
 
 <div class="body_wrapper">
     <div class="click_capture"></div>
-
     <?php
     // header layout
-    
-        get_template_part('template-parts/header-elements/header-default');
+    get_template_part('template-parts/header-elements/header-default');
     
