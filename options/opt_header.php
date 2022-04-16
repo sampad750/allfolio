@@ -7,51 +7,68 @@ Redux::set_section( 'allfolio_opt', array(
 	'customizer_width' => '400px',
 	'icon'             => 'dashicons dashicons-arrow-up-alt2',
 	'fields'           => array(
+		array(
 
-		array(
-			'title'    => esc_html__( 'Header Layout', 'allfolio' ),
-			'subtitle' => esc_html__( 'Select header logo and menu bar layout', 'allfolio' ),
-			'id'       => 'header_layout',
-			'type'     => 'image_select',
-			'options'  => array(
-				'default_menu' => array(
-					'alt' => esc_html__( 'Default', 'allfolio' ),
-					'img' => ALLFOLIO_DIR_IMG . '/header-default-layout.png'
-				),
-				'sidebar_menu'  => array(
-					'alt' => esc_html__( 'Side Bar Nav Menu', 'allfolio' ),
-					'img' => ALLFOLIO_DIR_IMG . '/header-default-layout.png'
-				),
-			),
-			'default'  => 'default'
-		),
-		array(
-			'title'    => esc_html__( 'Search placeholder', 'allfolio' ),
-			'id'       => 'top_search_placeholder',
-			'type'     => 'text',
-			'default'  => esc_html__( 'Search here..', 'allfolio' ),
-			'required' => [
-				[ 'header_layout', '=', 'topbar' ]
-			]
-		),
-		array(
-			'title'    => esc_html__( 'Email', 'allfolio' ),
-			'id'       => 'top_email',
-			'type'     => 'text',
-			'default'  => esc_html__( 'ensure@inc.com', 'allfolio' ),
-			'required' => [
-				[ 'header_layout', '=', 'topbar' ]
-			]
-		),
-		array(
-			'title'    => esc_html__( 'Phone', 'allfolio' ),
-			'id'       => 'top_phone',
-			'type'     => 'text',
-			'default'  => esc_html__( '(479) 421-6814', 'allfolio' ),
-			'required' => [
-				[ 'header_layout', '=', 'topbar' ]
-			]
-		)
+		'id'       => 'header_layout',
+        'type'     => 'select',
+        'title'    => __('Select Header Layout', 'allfolio'), 
+        'subtitle' => __('Select header logo and menu bar layout', 'allfolio'),
+        //'desc'     => __('This is the description field, again good for additional info.', 'allfolio'),
+        // Must provide key => value pairs for select options
+        'options'  => array(
+            '1' => 'Default',
+            '2' => 'Full Width',
+        ),
+        'default'  => '1',
+
+	)
+
+
+
+		// array(
+		// 	'title'    => esc_html__( 'Header Layout', 'allfolio' ),
+		// 	'subtitle' => esc_html__( 'Select header logo and menu bar layout', 'allfolio' ),
+		// 	'id'       => 'header_layout2',
+		// 	'type'     => 'image_select',
+		// 	'options'  => array(
+		// 		'default_menu' => array(
+		// 			'alt' => esc_html__( 'Default', 'allfolio' ),
+		// 			'img' => ALLFOLIO_DIR_IMG . '/header-default-layout.png'
+		// 		),
+		// 		'sidebar_menu'  => array(
+		// 			'alt' => esc_html__( 'Side Bar Nav Menu', 'allfolio' ),
+		// 			'img' => ALLFOLIO_DIR_IMG . '/header-default-layout.png'
+		// 		),
+		// 	),
+		// 	'default'  => 'default'
+		// ),
+		// array(
+		// 	'title'    => esc_html__( 'Search placeholder', 'allfolio' ),
+		// 	'id'       => 'top_search_placeholder',
+		// 	'type'     => 'text',
+		// 	'default'  => esc_html__( 'Search here..', 'allfolio' ),
+		// 	'required' => [
+		// 		[ 'header_layout', '=', 'topbar' ]
+		// 	]
+		// ),
+		// array(
+		// 	'title'    => esc_html__( 'Email', 'allfolio' ),
+		// 	'id'       => 'top_email',
+		// 	'type'     => 'text',
+		// 	'default'  => esc_html__( 'ensure@inc.com', 'allfolio' ),
+		// 	'required' => [
+		// 		[ 'header_layout', '=', 'topbar' ]
+		// 	]
+		// ),
+		// array(
+		// 	'title'    => esc_html__( 'Phone', 'allfolio' ),
+		// 	'id'       => 'top_phone',
+		// 	'type'     => 'text',
+		// 	'default'  => esc_html__( '(479) 421-6814', 'allfolio' ),
+		// 	'required' => [
+		// 		[ 'header_layout', '=', 'topbar' ]
+		// 	]
+		// )
 
 	)
 ) );

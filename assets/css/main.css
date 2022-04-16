@@ -3547,6 +3547,7 @@ p kbd {
 }
 .before-after-banner img {
   max-width: inherit;
+  width: 100%;
 }
 .before-after-banner .indicator {
   font-size: 16px;
@@ -7416,6 +7417,9 @@ p kbd {
 .team-item .team-content {
   transform: translateY(-15px);
   transition: all 0.3s ease-in-out;
+}
+.team-item .team-content a {
+  color: var(--p_color);
 }
 .team-item .team-img {
   position: relative;
@@ -11544,15 +11548,19 @@ blockquote::after {
   line-height: 30px;
   margin-bottom: 27px;
 }
+.footer-area-6 .footer-top .input-append-button {
+  max-width: 350px;
+}
 .footer-area-6 .footer-top .input-append-button .theme-btn {
   padding: 0 19px;
   background-color: #17161a;
   border-color: #17161a;
 }
 .footer-area-6 .footer-top .input-append-button .form-control {
-  width: 282px;
   height: 52px;
   padding-left: 20px;
+  width: 100%;
+  flex: 1 0;
 }
 .footer-area-6 .footer-top .input-append-button .form-control:focus {
   border-color: #17161a !important;

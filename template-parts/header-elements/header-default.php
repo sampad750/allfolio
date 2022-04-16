@@ -9,11 +9,17 @@ $is_menu_btn              = ! empty( $is_menu_btn == '1' ) ? 'mr-80' : '';
 $is_sticky_header         = ! empty( $opt['is_sticky_header'] ) ? $opt['is_sticky_header'] : '';
 $is_sticky_header_wrapper = $is_sticky_header == '1' ? 'is_sticky' : '';
 
+$header_layout            = ! empty( $opt['header_layout'] ) ? $opt['header_layout'] : '';
+$header_layout_class      = $header_layout == '1' ? 'container' : 'container-fluid pl-60 pr-65';
+
+//acf
+//$acf_header_layout            = function_exists( 'get_field' ) ? get_field( 'header_layout' ) : '';
+
 ?>
 
     <!-- Navbar -->
     <nav class="navbar menu_one sticky-nav ">
-        <div class="container">
+        <div class="<?php echo esc_attr($header_layout_class); ?>">
             <a class="navbar-brand header_logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                 <?php Allfolio_helper()->logo(); ?>
             </a>
