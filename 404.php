@@ -13,7 +13,6 @@ $bg_shape  = ! empty( $opt['error_bg_shape_image'] ) ? $opt['error_bg_shape_imag
         <div class="row">
             <div class="col-lg-12">
                 <div class="error-wrapper text-center">
-
                     <div class="logo-img mb-145 mt-45">
                         <?php Allfolio_helper()->logo(); ?>
                     </div>
